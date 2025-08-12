@@ -1,9 +1,9 @@
 package com.example.clienteapp.screens.cliente.componentes
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -11,15 +11,18 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
 import com.example.clienteapp.ui.theme.ClienteAppTheme
 
 @Composable
-fun BarraInferior(){
+fun BarraInferior(controlerNavegacao: NavHostController?) {
     NavigationBar (
         containerColor = MaterialTheme.colorScheme.primaryContainer
     ){
         NavigationBarItem(
-            onClick = {},
+            onClick = {
+                controlerNavegacao!!.navigate("conteudo")
+            },
             selected = false,
             icon = {
                 Icon(
@@ -33,7 +36,9 @@ fun BarraInferior(){
         )
 
         NavigationBarItem(
-            onClick = {},
+            onClick = {
+
+            },
             selected = false,
             icon = {
                 Icon(
@@ -48,16 +53,18 @@ fun BarraInferior(){
 
 
         NavigationBarItem(
-            onClick = {},
+            onClick = {
+                controlerNavegacao!!.navigate("cadastro")
+            },
             selected = false,
             icon = {
                 Icon(
-                    imageVector = Icons.Default.Person,
-                    contentDescription = "Person"
+                    imageVector = Icons.Default.Add,
+                    contentDescription = "novo"
                 )
             },
             label = {
-                Text(text = "Meu Perfil")
+                Text(text = "Novo Cliente")
             }
         )
     }
@@ -68,6 +75,6 @@ fun BarraInferior(){
 @Composable
 private fun BarrainferiorPreview(){
     ClienteAppTheme {
-        BarraInferior()
+        BarraInferior(null)
     }
 }

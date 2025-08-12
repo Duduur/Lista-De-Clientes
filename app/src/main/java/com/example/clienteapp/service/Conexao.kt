@@ -6,12 +6,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class Conexao {
 
-    private val BASE_URL = "https://app1.celso.dev.br/clientes-app/api/"
+    private val BASE_URL = "https://srv945707.hstgr.cloud/api/"
 
+    //recebe a conexao com a URL
     private val conexao = Retrofit
         .Builder()
         .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create()) // usa esse conversor
         .build()
 
     fun getClienteService(): ClienteService{

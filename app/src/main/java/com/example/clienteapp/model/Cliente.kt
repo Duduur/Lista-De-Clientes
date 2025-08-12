@@ -3,7 +3,7 @@ package com.example.clienteapp.model
 
 
 data class  Cliente(
-    val id: Long?,
-    val nome: String,
-    val email: String
+    val id: Long? = 0,
+    val nome: String = "",
+    val email: String = ""
 )

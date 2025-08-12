@@ -6,12 +6,15 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
 import com.example.clienteapp.ui.theme.ClienteAppTheme
 
 @Composable
-fun BotaoFlutuante(){
+fun BotaoFlutuante(controlerNavegacao: NavHostController?) {
     FloatingActionButton(
-        onClick = {},
+        onClick = {
+            controlerNavegacao!!.navigate("cadastro")
+        },
 
     ) {
         Icon(
@@ -25,6 +28,6 @@ fun BotaoFlutuante(){
 @Composable
 private fun BotaoFlutuantePreview(){
     ClienteAppTheme {
-        BotaoFlutuante()
+        BotaoFlutuante(null)
     }
 }
